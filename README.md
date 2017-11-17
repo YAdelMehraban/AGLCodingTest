@@ -35,3 +35,38 @@ npm run publish <=or=> ng build --prod
 dotnet restore
 dotnet run
 ```
+
+Now if you navigate to `http://localhost:5000` you will see the home page with all the cats.
+
+### Running xUnit tests
+
+In order to run the tests you can just simply type:
+
+    dotnet test
+    
+If you want to run the `Jasmine` tests, you can use:
+
+    npm test
+
+The Angular tests will run in a headless Chrome. If you want to change that please open up the `karma.config.js` and change the browser to whichever you prefer.
+    
+### Docker
+
+To run the application in docker container run the commands blow:
+
+    npm install
+    npm run publish <=or=> ng build --prod
+
+    docker-compose  -f ".\docker-compose.yml" -f ".\docker-compose.override.yml" -f ".\obj\Docker\docker-compose.vs.debug.g.yml" -p dockercompose2966794116290414041 up -d
+
+ This will create the docker image and run it. Now you need to know the address:
+
+ First let's get the container id:
+     
+     docker ps --filter "status=running" --filter "name=dockercompose2966794116290414041_web_" --format {{.ID}} -n 1
+
+Now run:
+
+    docker inspect --format="{{.NetworkSettings.Networks.nat.IPAddress}}" 765162a350ec
+
+This will give you the address where the app is running.

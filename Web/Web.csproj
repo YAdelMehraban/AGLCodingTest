@@ -3,19 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptCompilerBlocked>true</TypeScriptCompilerBlocked>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="wwwroot\**" />
-    <Content Remove="wwwroot\**" />
-    <EmbeddedResource Remove="wwwroot\**" />
-    <None Remove="wwwroot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="src\app\services\pet.service.mock.ts" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
   </ItemGroup>
@@ -25,7 +15,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\services\pet.service.mock.ts" />
+    <None Include="wwwroot\fontawesome-webfont.912ec66d7572ff821749.svg" />
+    <None Include="wwwroot\fontawesome-webfont.af7ae505a9eed503f8b8.woff2" />
+    <None Include="wwwroot\inline.c2c47362ade50a60011c.bundle.js" />
+    <None Include="wwwroot\main.3076f8d2191ab7bd5e20.bundle.js" />
+    <None Include="wwwroot\polyfills.8eba0ab53b5457105d75.bundle.js" />
+    <None Include="wwwroot\Roboto-Bold.c0f1e4a4fdfb8048c72e.woff2" />
+    <None Include="wwwroot\Roboto-Light.3c37aa69cd77e6a53a06.woff2" />
+    <None Include="wwwroot\Roboto-Medium.1561b424aaef2f704bbd.woff2" />
+    <None Include="wwwroot\Roboto-Regular.5136cbe62a63604402f2.woff2" />
+    <None Include="wwwroot\Roboto-Thin.1f35e6a11d27d2e10d28.woff2" />
+    <None Include="wwwroot\vendor.f8deefb512f68127d6f3.bundle.js" />
   </ItemGroup>
 
 </Project>
