@@ -1,0 +1,30 @@
+<div class="loading" *ngIf="loading">
+  <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+  </svg>  
+</div>
+
+<div class="container" *ngIf="!loading">
+  <div class="row">
+    <div class="col s6" *ngFor="let group of cats">
+      <div class="col s6 header">
+        <h3>{{group.gender}}</h3>
+        <span class="fa-stack fa-stack-5x has-badge" [attr.data-count]="group.petNames.length">
+          <i class="fa fa-paw fa-stack-2x"></i>
+          <i class="fa fa-bell fa-stack-1x fa-inverse"></i>
+        </span>
+      </div>
+      <div class="col s12">
+        <ul class="collection">
+          <li class="collection-item avatar" *ngFor="let cat of group.petNames">
+            <i class="fa fa-paw circle"></i>
+            <span class="title">{{cat}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<ng2-toasty [position]="'top-right'"></ng2-toasty>
+

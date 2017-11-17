@@ -1,0 +1,102 @@
+$offset: 187;
+$duration: 1.4s;
+
+.loading {
+  padding-left: 50%;
+  padding-top: 10%;
+}
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite, colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+
+  25% {
+    stroke: #DE3E35;
+  }
+
+  50% {
+    stroke: #F7C223;
+  }
+
+  75% {
+    stroke: #1B9A59;
+  }
+
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    display: inline-block;
+  }
+
+  .fa-stack[data-count] {
+    margin-left: 25px;
+
+    &:after {
+      position: absolute;
+      right: 0%;
+      top: 1%;
+      content: attr(data-count);
+      font-size: 60%;
+      padding: .6em;
+      border-radius: 999px;
+      line-height: .75em;
+      color: white;
+      background: rgba(255,0,0,.85);
+      text-align: center;
+      min-width: 2em;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+.collection-item {
+  display: flex;
+  align-items: center;
+}
