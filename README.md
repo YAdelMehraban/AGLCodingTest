@@ -1,4 +1,4 @@
-# AGL Coing Test
+# AGL Coding Test
 ##### By Yaser Mehraban
 
 This project consists of a set of API's which consume the AGL coding test API and return the full list and also list of all the cats grouped by the gender of their owners. It also has a client side SPA application written in Angular v4 using Angular CLI which consumes the API's and shows the list of cats in the home page.
