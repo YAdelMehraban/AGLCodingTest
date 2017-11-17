@@ -63,10 +63,10 @@ To run the application in docker container run the commands blow:
 
  First let's get the container id:
      
-     docker ps --filter "status=running" --filter "name=dockercompose2966794116290414041_web_" --format {{.ID}} -n 1
+     docker ps --filter "status=running" --filter "name=dockercompose2966794116290414041_web_" --format "{{.ID}}" -n 1
 
 Now run:
 
-    docker inspect --format="{{.NetworkSettings.Networks.nat.IPAddress}}" 765162a350ec
+    docker inspect --format="{{.NetworkSettings.Networks.nat.IPAddress}}" <ID from previous command>
 
 This will give you the address where the app is running.
