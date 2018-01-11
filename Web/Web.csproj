@@ -28,4 +28,8 @@
     <None Include="wwwroot\vendor.f8deefb512f68127d6f3.bundle.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Web.Models;
+using Core.Models;
+using Core.Interfaces;
 
-namespace Web.Services
+namespace Core.Services
 {
   public class PetOwnerService : IPetOwnerService
   {
     private readonly IHttpClient _client;
-    private readonly Uri _apiEndpoint;
     public PetOwnerService(IHttpClient client)
     {
       _client = client;

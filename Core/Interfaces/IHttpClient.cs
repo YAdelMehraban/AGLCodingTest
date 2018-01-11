@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Web.Services
+namespace Core.Interfaces
 {
   public interface IHttpClient
   {

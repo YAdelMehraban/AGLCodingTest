@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Web.Models;
+using Core.Models;
 
-namespace Web.Services
+namespace Core.Interfaces
 {
   public interface IPetOwnerService
   {

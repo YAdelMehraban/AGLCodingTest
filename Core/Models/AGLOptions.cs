@@ -1,4 +1,4 @@
-﻿namespace Web.Util
+﻿namespace Core.Models
 {
   public class AGLOptions
   {

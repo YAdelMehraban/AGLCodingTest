@@ -1,4 +1,4 @@
-﻿namespace Web.Models
+﻿namespace Core.Models
 {
   public enum Gender
   {

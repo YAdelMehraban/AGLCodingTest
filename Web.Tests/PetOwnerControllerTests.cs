@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Newtonsoft.Json;
 using Web.Controllers;
-using Web.Models;
-using Web.Services;
-using Web.Util;
+using Core.Models;
+using Core.Services;
+using Core.Interfaces;
 using Xunit;
 using Microsoft.Extensions.Options;
-using Moq.Protected;
 
 namespace Web.Tests
 {
@@ -128,6 +124,20 @@ namespace Web.Tests
       Assert.Equal("Garfield", list.Last().PetNames[0]);
       Assert.Equal("Tabby", list.Last().PetNames[1]);
       Assert.Equal("Simba", list.Last().PetNames[2]);
+    }
+
+    [Fact]
+    public async Task GivenServiceThrowsException_WhenTheContollerActionInCalled_ItShouldCatchItInGlobalExceptionHandler()
+    {
+      var petOwnerService = new Mock<IPetOwnerService>();
+      petOwnerService.Setup(c => c.GetAllCatsByOwnerGenderAsync())
+        .ThrowsAsync(new Exception("Test Exception Handling"));
+
+      var controller = new PetOwnerController(petOwnerService.Object);
+
+      Exception ex = await Assert.ThrowsAsync<Exception>(async () => await controller.GetCatsByOwnerGender());
+
+      Assert.NotEqual(ex.Message.IndexOf("Test Exception Handling", StringComparison.Ordinal), -1);
     }
   }
 }

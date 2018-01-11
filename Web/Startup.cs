@@ -1,12 +1,13 @@
 using System.Net;
-using System.Net.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Web.Services;
+using Core.Interfaces;
+using Core.Models;
+using Core.Services;
 using Web.Util;
 
 namespace Web

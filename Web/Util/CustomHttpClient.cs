@@ -3,9 +3,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using Web.Util;
+using Core.Interfaces;
+using Core.Models;
 
-namespace Web.Services
+namespace Web.Util
 {
   public class CustomHttpClient : IHttpClient
   {
